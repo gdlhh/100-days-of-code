@@ -18,6 +18,16 @@ class Snake:
             new_turtle.shape("square")
             new_turtle.goto(x=x_position, y=0)
             self.segments.append(new_turtle)
+
+    def extend(self):
+        new_turtle = Turtle()
+        new_turtle.penup()
+        new_turtle.color("white")
+        new_turtle.shape("square")
+        last_segment_xpos = self.segments[-1].xcor()
+        last_segment_ypos = self.segments[-1].ycor()
+        new_turtle.goto(x=last_segment_xpos, y=last_segment_ypos)
+        self.segments.append(new_turtle)
     
     def move(self):
         for segment in range(len(self.segments) - 1,0,-1):
