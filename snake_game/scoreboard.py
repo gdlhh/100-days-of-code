@@ -8,10 +8,14 @@ class Scoreboard(Turtle):
         self.penup()
         self.goto(x=0,y=280)
         self.ht()
-        self.write(f"Score: {self.score}", align="center")
+        self.write(f"Score: {self.score}", align="center", font=('comic sans',14, "normal"))
     
     def score_update(self):
         self.clear()
         self.score += 1
-        self.write(f"Score: {self.score}", align="center")
+        self.write(f"Score: {self.score}", align="center", font=('comic sans', 14,"normal"))
+
+    def game_over(self):
+        self.goto(x=0,y=0)
+        self.write("GAME OVER", align="center", font=("comic sans", 24, "normal"))
         
