@@ -9,10 +9,14 @@ class Ball(Turtle):
         self.penup()
 
     def move(self):
-        self.fd(5)
+        self.fd(15)
 
     def bounce_wall(self):
         self.setheading(-self.heading())
     
     def bounce_paddle(self):
         self.setheading(self.heading()+180)
+    
+    def restart(self):
+        self.goto(x=0,y=0)
+        self.setheading(random.randint(0,360))
